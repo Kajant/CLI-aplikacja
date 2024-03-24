@@ -1,5 +1,4 @@
-import  nanoid  from 'nanoid';
-
+const generateUniqueId = require('generate-unique-id')
 const fs = require('fs').promises;
 const path = require('path');
 
@@ -46,7 +45,7 @@ async function addContact(name, email, phone) {
     const contacts = await listContacts();
     try {
     const newContact = { 
-        id: nanoid(),
+        id: generateUniqueId(),
         name,
         email,
         phone,
